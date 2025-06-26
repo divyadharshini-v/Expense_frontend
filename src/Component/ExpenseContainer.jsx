@@ -59,7 +59,7 @@ const addExpense=async(title,amount)=>{
     ]);
 }*/
 console.log(expense[0])
-  const deleteExpense = async (id) => {
+     const deleteExpense = async (id) => {
     try {
       const response = await fetch(`https://expense-backend-cn25.onrender.com/Expense`, {
         method: 'DELETE',
