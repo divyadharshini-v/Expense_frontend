@@ -33,7 +33,7 @@ useEffect(()=>{
 
 const addExpense=async(title,amount)=>{
   try{
-    const response=await fetch('https://expense-backend-cn25.onrender.com/Expense/${id}',{
+    const response=await fetch(`https://expense-backend-cn25.onrender.com/Expense`,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({title,amount}),
@@ -61,7 +61,7 @@ const addExpense=async(title,amount)=>{
 console.log(expense[0])
      const deleteExpense = async (id) => {
     try {
-      const response = await fetch(`https://expense-backend-cn25.onrender.com/Expense`, {
+      const response = await fetch(`https://expense-backend-cn25.onrender.com/Expense/${id}`, {
         method: 'DELETE',
       });
 
