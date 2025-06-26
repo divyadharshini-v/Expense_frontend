@@ -19,7 +19,7 @@ function ExpenseContainer(){
 const [expense,setExpense]=useState([])
 const fetchExpense=async()=>{
   try{
-    const response=await fetch('http://localhost:4000/Expense')
+    const response=await fetch('https://expense-backend-cn25.onrender.com/Expense')
     const data=await response.json()
     setExpense(data)
   }catch(error){
@@ -33,7 +33,7 @@ useEffect(()=>{
 
 const addExpense=async(title,amount)=>{
   try{
-    const response=await fetch('http://localhost:4000/Expense',{
+    const response=await fetch('https://expense-backend-cn25.onrender.com/Expense',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({title,amount}),
@@ -61,7 +61,7 @@ const addExpense=async(title,amount)=>{
 console.log(expense[0])
   const deleteExpense = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/Expense/${id}`, {
+      const response = await fetch(`https://expense-backend-cn25.onrender.com/Expense`, {
         method: 'DELETE',
       });
 
@@ -89,7 +89,7 @@ console.log(expense[0])
       <h1>Expense Tracker</h1>
       <BalanceContainer expense={expense}/>
       
-        <h3>History</h3>
+        
         <History expense={expense} deleteExpense={deleteExpense}/>
         <ExpenseForm addExpense={addExpense}/>
     </div>
